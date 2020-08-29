@@ -7,4 +7,4 @@ Technology used:
 - Codeceptjs (end to end testing)
 - Netlify (deployment)
 
-Based off of this [cassidoo repo](https://github.com/cassidoo/next-netlify-starter)
+Based off of this [repo](https://github.com/cassidoo/next-netlify-starter) from [cassidoo](https://github.com/cassidoo).
