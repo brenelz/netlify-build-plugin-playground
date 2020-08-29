@@ -1,19 +1,48 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import { useState } from "react";
+
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 
 export default function Home() {
+  const [name, setName] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <div className="container">
       <Head>
-        <title>Next Starter!</title>
+        <title>Next Starter (with codeceptjs tests!)</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <Header />
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          {!submitted ? (
+            <>
+              <label>
+                Say hello to:{" "}
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
+              </label>
+              <button
+                onClick={() => {
+                  setSubmitted(true);
+                }}
+              >
+                Submit
+              </button>
+            </>
+          ) : (
+            `Hello, ${name}`
+          )}
         </p>
       </main>
 
@@ -43,6 +72,10 @@ export default function Home() {
           padding: 0.75rem;
           font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
         }
+
+        label {
+          margin-right: 1em;
+        }
       `}</style>
 
       <style jsx global>{`
@@ -60,5 +93,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
