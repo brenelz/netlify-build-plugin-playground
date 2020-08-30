@@ -1,0 +1,5 @@
+name: netlify-plugin-codeceptjs
+inputs:
+  - name: cmd
+    description: the command that starts the local server
+    default: "npm start"
