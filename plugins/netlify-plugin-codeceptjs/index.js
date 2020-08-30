@@ -1,6 +1,9 @@
 module.exports = {
-  onPostBuild: async ({ inputs: { cmd }, utils: { run, build } }) => {
-    run.command(cmd);
+  onPostBuild: async ({
+    inputs: { serverStartupCmd },
+    utils: { run, build },
+  }) => {
+    run.command(serverStartupCmd);
     try {
       await run.command(`npx codeceptjs run --steps`);
     } catch {
