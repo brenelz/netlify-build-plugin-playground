@@ -7,5 +7,5 @@ Scenario("test saying hello to someone", (I) => {
   I.wait(3);
   I.click("Submit");
   I.wait(3);
-  I.see("Hello, Brenley2222");
+  I.see("Hello, Brenley");
 });
